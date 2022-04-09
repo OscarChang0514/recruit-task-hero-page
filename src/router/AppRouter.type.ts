@@ -2,6 +2,7 @@ import { LazyExoticComponent } from "react";
 
 export interface RouteConfig {
     path: string;
-    Element: LazyExoticComponent<React.FC>;
+    element: LazyExoticComponent<React.FC>;
     childs?: RouteConfig[];
+    index?: true;
 }
