@@ -1,0 +1,1 @@
+export const $HahowGreen = '#2ee1b3';

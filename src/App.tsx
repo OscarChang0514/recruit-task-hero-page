@@ -1,9 +1,11 @@
 import AppRouter from './router/AppRouter';
+import { GlobalStyle } from './style/GlobalStyle';
 
 const App = () => {
-  return (
+  return (<>
+    <GlobalStyle />
     <AppRouter />
-  );
+  </>);
 }
 
 export default App;
