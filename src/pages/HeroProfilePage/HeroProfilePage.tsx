@@ -15,6 +15,12 @@ const HeroProfilePage: React.FC<HeroProfilePageProps> = (props) => {
     $heroProfileService.updateHeroProfile(heroId, heroProfile).subscribe();
   });
 
+  useEffect(() => {
+    $heroProfileService.getHeroProfile(heroId).subscribe(res => {
+      setHeroProfile(res.response);
+    })
+  }, [heroId])
+
 
   return (
     <>

@@ -15,6 +15,11 @@ const HeroListPage: React.FC<HeroListPageProps> = (props) => {
 
   const [heros, setHeros] = useState<Hero[]>([]);
 
+  useEffect(() => {
+    $heroService.getHeros().subscribe(res => {
+      setHeros(res.response)
+    })
+  }, [])
 
   return (
     <>
