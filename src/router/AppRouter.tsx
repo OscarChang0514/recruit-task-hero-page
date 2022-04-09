@@ -1,5 +1,6 @@
 import { Suspense } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Layout from "src/components/Layout";
 import { RouteConfig } from "./AppRouter.type";
 import routeConfigs from "./route-config";
 
@@ -14,7 +15,9 @@ const AppRouter: React.FC = () => {
         <BrowserRouter >
             <Suspense fallback={<></>}>
                 <Routes>
-                    {generateRoute(routeConfigs)}
+                    <Route path={'/'} element={<Layout />}>
+                        {generateRoute(routeConfigs)}
+                    </Route>
                 </Routes>
             </Suspense>
         </BrowserRouter >
