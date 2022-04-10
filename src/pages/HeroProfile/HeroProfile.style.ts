@@ -1,7 +1,7 @@
 import { $Green, $LightGreen } from 'src/style/color';
 import styled from 'styled-components';
 
-export const StyledHeroProfilePage = styled.div`
+export const StyledHeroProfile = styled.div`
 	display: flex;
 	position: relative;
 `;
