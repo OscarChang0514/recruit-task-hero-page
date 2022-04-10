@@ -1,4 +1,4 @@
-import { $HahowGreen } from 'src/style/color';
+import { $LightGreen } from 'src/style/color';
 import styled from 'styled-components';
 
 export const StyledNavbar = styled.nav`
@@ -20,9 +20,9 @@ export const NavItem = styled.a<{highLight?: boolean}>`
 	transition-duration: 0.2s;
 	padding: 0px 10px;
 	border-right: solid 1px grey;
-	${props => props.highLight && `color: ${$HahowGreen};`}
+	${props => props.highLight && `color: ${$LightGreen};`}
 	&:hover {
-		color: ${$HahowGreen};
+		color: ${$LightGreen};
 	}
 	:last-of-type {
 		border: none;
