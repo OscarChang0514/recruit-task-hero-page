@@ -1,4 +1,4 @@
-import { AddButton, MinusButton, Progress, StyledAbilityNumberInput, ValueBlock } from './AbilityNumberInput.style';
+import { AddButton, MinusButton, Progress, StyledAbilityNumberInput, TextBlock } from './AbilityNumberInput.style';
 import type { AbilityNumberInputProps } from './AbilityNumberInput.type';
 
 const AbilityNumberInput: React.FC<AbilityNumberInputProps> = (props) => {
@@ -16,12 +16,10 @@ const AbilityNumberInput: React.FC<AbilityNumberInputProps> = (props) => {
 
   return (
     <StyledAbilityNumberInput>
-      <span>{title}</span>
-      <ValueBlock>
-        <MinusButton onClick={() => handleChange(value - 1)} /> 
-        {value} 
-        <AddButton onClick={() => handleChange(value + 1)} />
-      </ValueBlock>
+      <TextBlock>{title}</TextBlock>
+      <MinusButton onClick={() => handleChange(value - 1)} /> 
+      <TextBlock>{value}</TextBlock>
+      <AddButton onClick={() => handleChange(value + 1)} />
       {isShowProgress && <Progress min={min} max={max} value={value} />}
     </StyledAbilityNumberInput>
   );

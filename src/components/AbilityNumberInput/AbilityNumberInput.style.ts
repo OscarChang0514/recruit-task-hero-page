@@ -1,5 +1,6 @@
 import { FaMinusCircle, FaPlusCircle } from 'react-icons/fa';
 import { $Green, $Orange } from 'src/style/color';
+import { $Rwd } from 'src/style/rwd';
 import styled from 'styled-components';
 
 export const StyledAbilityNumberInput = styled.div`
@@ -41,14 +42,18 @@ export const MinusButton = styled(FaMinusCircle)`
 	}
 `;
 
-export const ValueBlock = styled.div`
-	margin: 0 10px;
-	display: flex;
-	align-items: center;
-	user-select: none;
+export const TextBlock = styled.div`
+	flex: 2;
+	text-align: center;
 `;
 
 export const Progress = styled.meter`
 	width: 100%;
 	height: 25px;
+	flex: 6;
+	margin-left: 15px;
+
+	@media (max-width: ${$Rwd.tablet}) {  
+			display: none;
+	}
 `;
