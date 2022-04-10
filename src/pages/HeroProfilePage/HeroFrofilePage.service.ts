@@ -1,6 +1,5 @@
 import Api from "src/service/api";
-import { Hero } from "src/types/hero.type";
-import { HeroProfile } from "./HeroProfilePage.type";
+import { Hero, Profile } from "src/types/hero.type";
 
 export const HeroProfileService = () => {
 
@@ -10,7 +9,7 @@ export const HeroProfileService = () => {
         getHeroProfile: (id: string) => {
             return api.getJSON<Hero[]>(`https://hahow-recruit.herokuapp.com/heroes/${id}/profile`)
         },
-        updateHeroProfile: (id: string, profile: HeroProfile) => {
+        updateHeroProfile: (id: string, profile: Profile) => {
             return api.patch(`https://hahow-recruit.herokuapp.com/heroes/${id}/profile`, profile)
         }
     }
