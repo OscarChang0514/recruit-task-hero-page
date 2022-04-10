@@ -8,6 +8,7 @@ export const StyledHeroCard = styled.a<{selected?: boolean}>`
 	overflow: hidden;
 	cursor: pointer;
 	min-width: 120px;
+	max-width: 250px;
 	transition-duration: 0.2s;
 	background: white;
 	${props => props.selected && `color: ${$LightGreen};`}
