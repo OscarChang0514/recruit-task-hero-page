@@ -1,3 +1,6 @@
+import { Profile } from "src/types/hero.type";
+
 export interface HeroProfileProps {
-  // TODO: Add props type here
+  profile: Profile;
+  onProfileChange?: (profile: Profile) => void;
 }
