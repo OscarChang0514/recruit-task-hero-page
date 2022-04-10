@@ -1,4 +1,5 @@
 import { $LightGreen } from 'src/style/color';
+import { $Rwd } from 'src/style/rwd';
 import styled from 'styled-components';
 
 export const StyledNavbar = styled.nav`
@@ -11,6 +12,12 @@ export const StyledNavbar = styled.nav`
 	position: sticky;
 	top: 0;
 	z-index: 30;
+
+	@media (max-width: ${$Rwd.tablet}) {  
+		display: block;
+		text-align: center;
+		padding-bottom: 10px;
+	}
 `;
 
 export const NavItem = styled.a<{highLight?: boolean}>`
