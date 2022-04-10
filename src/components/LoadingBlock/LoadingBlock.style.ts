@@ -21,7 +21,7 @@ export const StyledLoadingBlock = styled.div<{color?: string, dotSpacing?: strin
 		border-radius: 200px;
 		position: relative;
 		animation: dot-flashing 1s infinite linear alternate;
-		//animation-delay: .5s;
+		animation-delay: -0.5s;
 	
 		&::before,
 		&::after {
@@ -37,26 +37,25 @@ export const StyledLoadingBlock = styled.div<{color?: string, dotSpacing?: strin
 		&::before {
 			left: -${props => props.dotSpacing};
 			animation: dot-flashing 1s infinite alternate;
-			//animation-delay: 0s;
+			animation-delay: 0s;
 		}
 	
 		&::after {
 			left: ${props => props.dotSpacing};
 			animation: dot-flashing 1s infinite alternate;
-			//animation-delay: 1s;
+			animation-delay: -1s;
 		}
 	}
   
 	@keyframes dot-flashing {
-		0% {
+		0%, 50% {
 			background-color: ${props => props.color};
 			opacity: 1;
 		}
 
-		50%,
 		100% {
 			background-color: ${props => props.color};
-			opacity: 1;
+			opacity: 0.2;
 		}
 	}
 
