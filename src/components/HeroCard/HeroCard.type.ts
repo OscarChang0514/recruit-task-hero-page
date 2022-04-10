@@ -1,5 +1,4 @@
-import { Hero } from "src/types/hero.type";
-
+import { Hero } from "src/pages/HeroList/HeroList.type";
 
 export interface HeroCardProps extends Hero {
   selected?: boolean;

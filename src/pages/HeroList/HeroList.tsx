@@ -1,13 +1,13 @@
 
 import { useEffect, useState } from 'react';
 import { Outlet, useNavigate, useParams } from 'react-router';
-import HeroList from 'src/components/HeroList';
+import HeroCard from 'src/components/HeroCard';
 import LoadingBlock from 'src/components/LoadingBlock';
-import { Hero } from 'src/types/hero.type';
-import { HeroService } from './HeroListPage.service';
-import type { HeroListPageProps } from './HeroListPage.type';
+import { ListBlock } from './HeroList.style';
+import { HeroService } from './HeroList.service';
+import type { Hero, HeroListPageProps } from './HeroList.type';
 
-const HeroListPage: React.FC<HeroListPageProps> = (props) => {
+const HeroList: React.FC<HeroListPageProps> = (props) => {
 
   const $heroService = HeroService();
 
@@ -32,15 +32,20 @@ const HeroListPage: React.FC<HeroListPageProps> = (props) => {
     <h2>Heros</h2>
     <div style={{position: 'relative'}}>
       {isLoading && <LoadingBlock style={{minHeight: '100px'}} />}
-      <HeroList 
-        heros={heros} 
-        selectedIndex={heros.findIndex((hero) => hero.id === heroId)}
-        onCardClick={index => navigate(heros[index].id)} 
-      />
+      <ListBlock>
+        {heros.map((hero, index) => 
+          <HeroCard 
+            {...hero}
+            key={'hero' + hero.id}  
+            selected={hero.id === heroId}
+            onCardClick={() => navigate(heros[index].id)} 
+          />
+        )}
+      </ListBlock>
     </div>
     <Outlet />
     </>
   );
 };
 
-export default HeroListPage;
+export default HeroList;

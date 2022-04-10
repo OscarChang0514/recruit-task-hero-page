@@ -1,4 +1,4 @@
-import HeroListPage from "src/pages/HeroListPage";
+import HeroList from "src/pages/HeroList";
 import HeroProfile from "src/pages/HeroProfile";
 import Home from "src/pages/Home";
 import { RouteConfig } from "./AppRouter.type";
@@ -13,7 +13,7 @@ export default [
 	{
 		path: '/heroes', 
 		title: 'Heros',
-		element: HeroListPage, 
+		element: HeroList, 
 		childs: [
 			{ 
 				path: '/heroes/:heroId', 
