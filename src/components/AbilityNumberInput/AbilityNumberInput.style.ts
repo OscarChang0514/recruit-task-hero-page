@@ -45,6 +45,7 @@ export const MinusButton = styled(FaMinusCircle)`
 export const TextBlock = styled.div`
 	flex: 2;
 	text-align: center;
+	user-select: none;
 `;
 
 export const Progress = styled.meter`

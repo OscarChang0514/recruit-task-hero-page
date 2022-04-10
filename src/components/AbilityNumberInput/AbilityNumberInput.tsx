@@ -8,10 +8,9 @@ const AbilityNumberInput: React.FC<AbilityNumberInputProps> = (props) => {
   const isShowProgress = (min || min === 0) && (max || max === 0) && progress;
 
   const handleChange = (newValue: number) => {
-    let isValid = true;
-    (min || min === 0) && (isValid = newValue >= min);
-    (max || max === 0) && (isValid = newValue <= max);
-    isValid && onChange(newValue)
+    let isMinValid = (min || min === 0) ? newValue >= min : true;
+    let isMaxValid = (max || max === 0) ? newValue <= max : true;
+    isMinValid && isMaxValid && onChange(newValue);
   };
 
   return (
