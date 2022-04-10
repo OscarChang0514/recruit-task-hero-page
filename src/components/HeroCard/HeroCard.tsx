@@ -3,7 +3,10 @@ import type { HeroCardProps } from './HeroCard.type';
 
 const HeroCard: React.FC<HeroCardProps> = (props) => {
   return (
-    <StyledHeroCard selected={props.selected} onClick={props.onCardClick}>
+    <StyledHeroCard href={'/heroes/' + props.id} selected={props.selected} onClick={(e) => {
+      e.preventDefault();
+      props.onCardClick();
+    }}>
       <div>
         <HeroImg src={props.image} />
       </div>

@@ -11,6 +11,8 @@ export const StyledHeroCard = styled.a<{selected?: boolean}>`
 	max-width: 250px;
 	transition-duration: 0.2s;
 	background: white;
+	text-decoration: none;
+	color: inherit;
 	${props => props.selected && `color: ${$LightGreen};`}
 	&:hover{
 		color: ${$LightGreen};
