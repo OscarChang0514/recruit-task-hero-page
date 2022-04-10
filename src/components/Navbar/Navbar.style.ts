@@ -24,6 +24,7 @@ export const NavItem = styled.a<{highLight?: boolean}>`
 	text-decoration: none;
 	color: inherit;
 	font-size: 1.1em;
+	margin-top: 10px;
 	transition-duration: 0.2s;
 	padding: 0px 10px;
 	border-right: solid 1px grey;
