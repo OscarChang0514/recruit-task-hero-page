@@ -1,13 +1,13 @@
-import { StyledHeroCard } from './HeroCard.style';
+import { HeroImg, StyledHeroCard } from './HeroCard.style';
 import type { HeroCardProps } from './HeroCard.type';
 
 const HeroCard: React.FC<HeroCardProps> = (props) => {
   return (
-    <StyledHeroCard onClick={props.onCardClick}>
+    <StyledHeroCard selected={props.selected} onClick={props.onCardClick}>
       <div>
-        <img src={props.image} />
+        <HeroImg src={props.image} />
       </div>
-      <span>{props.name}</span>
+      <h3>{props.name}</h3>
     </StyledHeroCard>
   );
 };
