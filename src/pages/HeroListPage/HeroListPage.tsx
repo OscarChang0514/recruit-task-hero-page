@@ -1,6 +1,6 @@
 
 import { useEffect, useState } from 'react';
-import { Outlet, useNavigate } from 'react-router';
+import { Outlet, useNavigate, useParams } from 'react-router';
 import HeroList from 'src/components/HeroList';
 import { Hero } from 'src/types/hero.type';
 import { HeroService } from './HeroListPage.service';
@@ -13,6 +13,8 @@ const HeroListPage: React.FC<HeroListPageProps> = (props) => {
 
   const navigate = useNavigate();
 
+  const { heroId } = useParams();
+
   const [heros, setHeros] = useState<Hero[]>([]);
 
   useEffect(() => {
@@ -23,7 +25,12 @@ const HeroListPage: React.FC<HeroListPageProps> = (props) => {
 
   return (
     <>
-    <HeroList heros={heros} onCardClick={index => navigate(heros[index].id)} />
+    <h2>Heros</h2>
+    <HeroList 
+      heros={heros} 
+      selectedIndex={heros.findIndex((hero) => hero.id === heroId)}
+      onCardClick={index => navigate(heros[index].id)} 
+    />
     <Outlet />
     </>
   );
