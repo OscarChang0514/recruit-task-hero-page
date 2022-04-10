@@ -1,4 +1,6 @@
-import { lazy } from "react";
+import HeroListPage from "src/pages/HeroListPage";
+import HeroProfilePage from "src/pages/HeroProfilePage";
+import Home from "src/pages/Home";
 import { RouteConfig } from "./AppRouter.type";
 
 export default [
@@ -6,16 +8,16 @@ export default [
 		path: '/',
 		title: 'Home',
 		index: true,
-		element: lazy(() => import("../pages/Home")), 
+		element: Home, 
 	},
 	{
 		path: '/heroes', 
 		title: 'Heros',
-		element: lazy(() => import("../pages/HeroListPage")), 
+		element: HeroListPage, 
 		childs: [
 			{ 
 				path: '/heroes/:heroId', 
-				element: lazy(() => import("../pages/HeroProfilePage")) 
+				element: HeroProfilePage
 			}
 		]
 	},
