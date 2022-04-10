@@ -1,4 +1,4 @@
-import { $LightGreen } from 'src/style/color';
+import { $Green, $LightGreen } from 'src/style/color';
 import styled from 'styled-components';
 
 export const StyledHeroCard = styled.a<{selected?: boolean}>`
@@ -13,7 +13,7 @@ export const StyledHeroCard = styled.a<{selected?: boolean}>`
 	background: white;
 	text-decoration: none;
 	color: inherit;
-	${props => props.selected && `color: ${$LightGreen};`}
+	${props => props.selected && `color: ${$Green};`}
 	&:hover{
 		color: ${$LightGreen};
 	}

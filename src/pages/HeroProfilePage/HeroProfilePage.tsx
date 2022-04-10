@@ -3,7 +3,7 @@ import { useParams } from 'react-router';
 import HeroProfile from 'src/components/HeroProfile';
 import { Profile } from 'src/types/hero.type';
 import { HeroProfileService } from './HeroFrofilePage.service';
-import { StyledHeroProfilePage } from './HeroProfilePage.style';
+import { SaveButton, StyledHeroProfilePage } from './HeroProfilePage.style';
 import { HeroProfilePageProps } from './HeroProfilePage.type';
 import { getProfileRemainPoint } from './HeroProfilePage.util';
 
@@ -43,10 +43,10 @@ const HeroProfilePage: React.FC<HeroProfilePageProps> = (props) => {
       </div>
       <div style={{flex: '1 0 30%', display: 'flex', alignItems: 'end', justifyContent: 'right'}}>
         <div style={{textAlign: 'left'}}>
-          <div>剩餘點數: {remainPoint}</div>
-          <button disabled={remainPoint > 0} onClick={handleUpdateHeroProfile}>
+          <h4>剩餘點數: {remainPoint}</h4>
+          <SaveButton disabled={remainPoint > 0} onClick={handleUpdateHeroProfile}>
             儲存
-          </button>
+          </SaveButton>
         </div>
       </div>
     </StyledHeroProfilePage>
