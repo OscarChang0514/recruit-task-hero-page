@@ -21,7 +21,9 @@ const HeroProfilePage: React.FC<HeroProfilePageProps> = (props) => {
   const remainPoint = useMemo(() => getProfileRemainPoint(heroProfile), [heroProfile]);
 
   const handleUpdateHeroProfile = useCallback(() => {
-    $heroProfileService.updateHeroProfile(heroId, heroProfile).subscribe();
+    $heroProfileService.updateHeroProfile(heroId, heroProfile).subscribe(() => {
+      alert('更新成功!');
+    });
   }, [heroProfile]);
 
   useEffect(() => {
