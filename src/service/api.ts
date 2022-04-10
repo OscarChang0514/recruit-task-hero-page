@@ -6,7 +6,7 @@ import handleError from './handle-error';
 const AjaxRequestOptionDefaultValue: AjaxRequestOption = {
 	url: '',
 	method: 'GET',
-	async: false,
+	async: true,
     headers: {},
     timeout: 8000,
     crossDomain: true,

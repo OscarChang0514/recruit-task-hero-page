@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { useParams } from 'react-router';
 import HeroProfile from 'src/components/HeroProfile';
+import LoadingBlock from 'src/components/LoadingBlock';
 import { Profile } from 'src/types/hero.type';
 import { HeroProfileService } from './HeroFrofilePage.service';
 import { SaveButton, StyledHeroProfilePage } from './HeroProfilePage.style';
@@ -13,6 +14,8 @@ const HeroProfilePage: React.FC<HeroProfilePageProps> = (props) => {
 
   const [heroProfile, setHeroProfile] = useState<Profile>(null);
 
+  const [isLoading, setIsLoading] = useState<boolean>(true);
+
   const { heroId } = useParams();
 
   const remainPoint = useMemo(() => getProfileRemainPoint(heroProfile), [heroProfile]);
@@ -22,18 +25,21 @@ const HeroProfilePage: React.FC<HeroProfilePageProps> = (props) => {
   }, [heroProfile]);
 
   useEffect(() => {
+    setIsLoading(true);
     $heroProfileService.getHeroProfile(heroId).subscribe(res => {
       setHeroProfile({
         ...res.response,
         total: Object.values<number>(res.response).reduce((sum, current) => current + sum, 0)
       });
+      setIsLoading(false);
     })
   }, [heroId])
 
-
-  return (heroProfile && <div>
+  return (<div>
     <h2>Profile</h2>
     <StyledHeroProfilePage>
+      {isLoading && <LoadingBlock style={{minHeight: '100px'}} />}
+      {heroProfile && <>
       <div style={{flex: '1 0 65%'}}>
         <HeroProfile 
           profile={heroProfile} onProfileChange={(profile) => {
@@ -49,6 +55,7 @@ const HeroProfilePage: React.FC<HeroProfilePageProps> = (props) => {
           </SaveButton>
         </div>
       </div>
+      </>}
     </StyledHeroProfilePage>
   </div>);
 };
