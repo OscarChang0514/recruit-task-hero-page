@@ -6,7 +6,12 @@ const HeroList: React.FC<HeroListProps> = (props) => {
   return ( 
     <StyledHeroList>
       {props.heros.map((hero, index) => 
-        <HeroCard {...hero} onCardClick={() => props.onCardClick(index)} />
+        <HeroCard 
+          {...hero}
+          selected={props.selectedIndex === index}
+          key={'hero' + hero.id}  
+          onCardClick={() => props.onCardClick(index)} 
+        />
       )}
     </StyledHeroList>
   );
