@@ -13,23 +13,6 @@ yarn start
 
 <br>
 
-## 使用的第三方套件
-
-### 專案
-
-- **[styled-components](https://styled-components.com/)** - CSS-In-JS 的函式庫，使你可以在 JSX 中撰寫 CSS code，更方便的是他可以接到 component 的 props 值來動態改變 css 樣式
-- **[react-router](https://reactrouter.com/)** - 完整的 React 路由解決方案，在 React 中實現路由功能
-- **[rxjs](https://rxjs.dev/)** - 一套藉由 Observable sequences 來組合非同步行為和事件基礎程序的 Library，使用 ajax 來做 api fetch
-- **[react-icons](https://react-icons.github.io/react-icons)** - 提供簡單方便的方法在 React 中使用主流 icon 的 Library
-
-
-### Vscode Extension
-
-- **[Create Component](https://marketplace.visualstudio.com/items?itemName=amowu.vscode-create-component)** - Hahow 開發團隊發佈的 extension ，用於快速建立 template ，選擇使用它是因為除了方便以外，也想在寫專案的過程中順道了解 Hahow for business 專案的 coding style
-- **[Eslint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)** - 開發過程中輔助檢查code以提高程式碼品質
-
-<br>
-
 ## 專案架構 & 特色
 
 ### 檔案結構
@@ -67,6 +50,22 @@ yarn start
     - 使用 Css 的 media 語法針對不同頁面寬度實作 Rwd 
 - 加入某些UI反應的動畫，提升互動性
 
+<br>
+
+## 使用的第三方 Library
+
+### 專案
+
+- **[styled-components](https://styled-components.com/)** - CSS-In-JS 的函式庫，使你可以在 JSX 中撰寫 CSS code，更方便的是他可以接到 component 的 props 值來動態改變 css 樣式
+- **[react-router](https://reactrouter.com/)** - 完整的 React 路由解決方案，在 React 中實現路由功能
+- **[rxjs](https://rxjs.dev/)** - 一套藉由 Observable sequences 來組合非同步行為和事件基礎程序的 Library，使用 ajax 來做 api fetch
+- **[react-icons](https://react-icons.github.io/react-icons)** - 提供簡單方便的方法在 React 中使用主流 icon 的 Library
+
+
+### Vscode Extension
+
+- **[Create Component](https://marketplace.visualstudio.com/items?itemName=amowu.vscode-create-component)** - Hahow 開發團隊發佈的 extension ，用於快速建立 template ，選擇使用它是因為除了方便以外，也想在寫專案的過程中順道了解 Hahow for business 專案的 coding style
+- **[Eslint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)** - 開發過程中輔助檢查code以提高程式碼品質
 
 <br>
 
