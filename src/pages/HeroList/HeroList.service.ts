@@ -6,7 +6,7 @@ export const HeroService = () => {
 	const api = Api();
 
 	return {
-		getHeros: () => {
+		getHeroes: () => {
 			return api.getJSON<Hero[]>(`https://hahow-recruit.herokuapp.com/heroes`)
 		},
 		getHeroById: (id: string) => {

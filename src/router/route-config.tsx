@@ -12,7 +12,7 @@ export default [
 	},
 	{
 		path: '/heroes', 
-		title: 'Heros',
+		title: 'Heroes',
 		element: HeroList, 
 		childs: [
 			{ 

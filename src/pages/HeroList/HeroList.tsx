@@ -17,28 +17,28 @@ const HeroList: React.FC<HeroListPageProps> = (props) => {
 
   const [isLoading, setIsLoading] = useState<boolean>(true);
 
-  const [heros, setHeros] = useState<Hero[]>([]);
+  const [heroes, setHeroes] = useState<Hero[]>([]);
 
   useEffect(() => {
     setIsLoading(true);
-    $heroService.getHeros().subscribe(res => {
-      setHeros(res.response);
+    $heroService.getHeroes().subscribe(res => {
+      setHeroes(res.response);
       setIsLoading(false);
     })
   }, [])
 
   return (
     <>
-    <h2>Heros</h2>
+    <h2>Heroes</h2>
     <div style={{position: 'relative'}}>
       {isLoading && <LoadingBlock style={{minHeight: '100px'}} />}
       <ListBlock>
-        {heros.map((hero, index) => 
+        {heroes.map((hero, index) => 
           <HeroCard 
             {...hero}
             key={'hero' + hero.id}  
             selected={hero.id === heroId}
-            onCardClick={() => navigate(heros[index].id)} 
+            onCardClick={() => navigate(heroes[index].id)} 
           />
         )}
       </ListBlock>
