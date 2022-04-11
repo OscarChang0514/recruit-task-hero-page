@@ -43,40 +43,40 @@ const HeroProfile: React.FC<HeroProfileProps> = (props) => {
   return (<div>
     <h2>Profile</h2>
     <StyledHeroProfile>
-      {isLoading && <LoadingBlock style={{minHeight: '100px'}} />}
+      {isLoading && <LoadingBlock style={{ minHeight: '100px' }} />}
       {heroProfile && <>
-        <div style={{flex: '1 0 65%'}}>
-            <AbilityNumberInput
+        <div style={{ flex: '1 0 65%' }}>
+          <AbilityNumberInput
             title={'AGI'}
             value={heroProfile.agi}
             min={0}
             max={heroProfile.total}
-            onChange={(value) => handleProfileChange({...heroProfile, agi: value})}
+            onChange={(value) => handleProfileChange({ ...heroProfile, agi: value })}
           />
           <AbilityNumberInput
             title={'INT'}
             value={heroProfile.int}
             min={0}
             max={heroProfile.total}
-            onChange={(value) => handleProfileChange({...heroProfile, int: value})}
+            onChange={(value) => handleProfileChange({ ...heroProfile, int: value })}
           />
           <AbilityNumberInput
             title={'LUK'}
             value={heroProfile.luk}
             min={0}
             max={heroProfile.total}
-            onChange={(value) => handleProfileChange({...heroProfile, luk: value})}
+            onChange={(value) => handleProfileChange({ ...heroProfile, luk: value })}
           />
           <AbilityNumberInput
             title={'STR'}
             value={heroProfile.str}
             min={0}
             max={heroProfile.total}
-            onChange={(value) => handleProfileChange({...heroProfile, str: value})}
+            onChange={(value) => handleProfileChange({ ...heroProfile, str: value })}
           />
         </div>
-        <div style={{flex: '1 0 30%', display: 'flex', alignItems: 'end', justifyContent: 'right'}}>
-          <div style={{textAlign: 'left'}}>
+        <div style={{ flex: '1 0 30%', display: 'flex', alignItems: 'end', justifyContent: 'right' }}>
+          <div style={{ textAlign: 'left' }}>
             <h4>剩餘點數: {remainPoint}</h4>
             <SaveButton disabled={remainPoint > 0} onClick={submitHeroProfile}>
               儲存
