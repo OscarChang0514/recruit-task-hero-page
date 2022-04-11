@@ -19,6 +19,7 @@ export const Footer = styled.footer`
 	text-align: center;
   background-color: white;
   border-top: solid 1px #cecece;
+  margin-top: 30px;
   padding: 15px;
   position: sticky;
   top: 100vh;
