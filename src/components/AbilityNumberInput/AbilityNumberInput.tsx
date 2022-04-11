@@ -1,6 +1,10 @@
 import { AddButton, MinusButton, Progress, StyledAbilityNumberInput, TextBlock } from './AbilityNumberInput.style';
 import type { AbilityNumberInputProps } from './AbilityNumberInput.type';
 
+/**
+ * 提供數值加減的NumberInput，在min max參數皆有傳入時會顯示Progress來表示數值長度
+ * @example <AbilityNumberInput value={75} min={0} max={100} />
+ */
 const AbilityNumberInput: React.FC<AbilityNumberInputProps> = (props) => {
 
   const {min, max, value, progress, title, onChange} = props;
