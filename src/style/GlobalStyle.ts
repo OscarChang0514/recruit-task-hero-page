@@ -7,4 +7,7 @@ export const GlobalStyle = createGlobalStyle`
 		height: 100%;
 		font-family: 微軟正黑體;
 	}
+	#root {
+		height: 100vh;
+	}
 `;

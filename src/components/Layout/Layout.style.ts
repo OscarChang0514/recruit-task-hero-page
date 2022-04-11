@@ -14,3 +14,12 @@ export const MainPageBlock = styled.div`
 		max-width: 560px;
 	}
 `;
+
+export const Footer = styled.footer`
+	text-align: center;
+  background-color: white;
+  border-top: solid 1px #cecece;
+  padding: 15px;
+  position: sticky;
+  top: 100vh;
+`;
