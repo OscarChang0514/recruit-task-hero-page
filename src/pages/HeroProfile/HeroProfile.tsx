@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { useParams } from 'react-router';
 import AbilityNumberInput from 'src/components/AbilityNumberInput';
 import LoadingBlock from 'src/components/LoadingBlock';
@@ -10,6 +10,8 @@ import { getProfileRemainPoint } from './HeroProfile.util';
 const HeroProfile: React.FC<HeroProfileProps> = (props) => {
 
   const $heroProfileService = HeroProfileService();
+
+  const scrollRef = useRef<HTMLDivElement>(null);
 
   const [heroProfile, setHeroProfile] = useState<Profile>(null);
 
@@ -36,11 +38,12 @@ const HeroProfile: React.FC<HeroProfileProps> = (props) => {
         ...res.response,
         total: Object.values<number>(res.response).reduce((sum, current) => current + sum, 0)
       });
+      scrollRef.current?.scrollIntoView({behavior: 'smooth', block: 'nearest'});
       setIsLoading(false);
     })
   }, [heroId])
 
-  return (<div>
+  return (<div ref={scrollRef}>
     <h2>Profile</h2>
     <StyledHeroProfile>
       {isLoading && <LoadingBlock style={{ minHeight: '100px' }} />}
