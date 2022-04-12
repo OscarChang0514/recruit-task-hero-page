@@ -14,4 +14,26 @@ export const GlobalStyle = createGlobalStyle`
 	#root {
 		height: 100vh;
 	}
+
+	@keyframes fade-move-in {
+		0% {
+			margin-top: 100px;
+			margin-bottom: -100px;
+			opacity: 0;
+		}
+		100% {
+			margin-top: 0;
+			margin-bottom: 0;
+			opacity: 1;
+		}
+	}
+
+	@keyframes fade-in {
+		0% {
+			opacity: 0;
+		}
+		100% {
+			opacity: 1;
+		}
+	}
 `;
