@@ -11,7 +11,10 @@ const Navbar: React.FC<NavbarProps> = (props) => {
 
   return (
     <StyledNavbar>
-      <img src={'https://blog.hahow.in/content/images/2016/08/Hahow---.png'} style={{maxWidth: '120px', objectFit: 'cover'}} />
+      <img 
+        alt={''} src={'https://blog.hahow.in/content/images/2016/08/Hahow---.png'} 
+        style={{maxWidth: '120px', objectFit: 'cover'}} 
+      />
       <h1>
         Hahow Recurit /&nbsp;
         <span style={{fontSize: '0.8em', fontWeight: 'normal'}}>Hero Page</span>
