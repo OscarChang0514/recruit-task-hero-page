@@ -50,11 +50,11 @@ const HeroProfile: React.FC<HeroProfileProps> = (props) => {
       {heroProfile && <>
         <AbilityBlock>
           <AbilityNumberInput
-            title={'AGI'}
-            value={heroProfile.agi}
+            title={'STR'}
+            value={heroProfile.str}
             min={0}
             max={heroProfile.total}
-            onChange={(value) => handleProfileChange({ ...heroProfile, agi: value })}
+            onChange={(value) => handleProfileChange({ ...heroProfile, str: value })}
           />
           <AbilityNumberInput
             title={'INT'}
@@ -64,18 +64,18 @@ const HeroProfile: React.FC<HeroProfileProps> = (props) => {
             onChange={(value) => handleProfileChange({ ...heroProfile, int: value })}
           />
           <AbilityNumberInput
+            title={'AGI'}
+            value={heroProfile.agi}
+            min={0}
+            max={heroProfile.total}
+            onChange={(value) => handleProfileChange({ ...heroProfile, agi: value })}
+          />
+          <AbilityNumberInput
             title={'LUK'}
             value={heroProfile.luk}
             min={0}
             max={heroProfile.total}
             onChange={(value) => handleProfileChange({ ...heroProfile, luk: value })}
-          />
-          <AbilityNumberInput
-            title={'STR'}
-            value={heroProfile.str}
-            min={0}
-            max={heroProfile.total}
-            onChange={(value) => handleProfileChange({ ...heroProfile, str: value })}
           />
         </AbilityBlock>
         <RemainPointBlock>
