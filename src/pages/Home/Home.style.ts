@@ -16,3 +16,8 @@ export const StyledPrimaryButton = styled(PrimaryButton)`
 	width: 150px;
 	margin: 10px 15px;
 `;
+
+export const StyledHome = styled.div`
+	text-align: center;
+	animation: fade-move-in 2s ease-in 1;
+`;

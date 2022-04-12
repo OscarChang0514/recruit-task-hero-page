@@ -1,15 +1,17 @@
-import { useCallback, useEffect, useMemo, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { useParams } from 'react-router';
 import AbilityNumberInput from 'src/components/AbilityNumberInput';
 import LoadingBlock from 'src/components/LoadingBlock';
 import { HeroProfileService } from './HeroFrofile.service';
-import { SaveButton, StyledHeroProfile } from './HeroProfile.style';
+import { AbilityBlock, RemainPointBlock, SaveButton, StyledHeroProfile } from './HeroProfile.style';
 import { HeroProfileProps, Profile } from './HeroProfile.type';
 import { getProfileRemainPoint } from './HeroProfile.util';
 
 const HeroProfile: React.FC<HeroProfileProps> = (props) => {
 
   const $heroProfileService = HeroProfileService();
+
+  const scrollRef = useRef<HTMLDivElement>(null);
 
   const [heroProfile, setHeroProfile] = useState<Profile>(null);
 
@@ -36,16 +38,17 @@ const HeroProfile: React.FC<HeroProfileProps> = (props) => {
         ...res.response,
         total: Object.values<number>(res.response).reduce((sum, current) => current + sum, 0)
       });
+      scrollRef.current?.scrollIntoView({behavior: 'smooth', block: 'nearest'});
       setIsLoading(false);
     })
   }, [heroId])
 
-  return (<div>
+  return (<div ref={scrollRef}>
     <h2>Profile</h2>
     <StyledHeroProfile>
       {isLoading && <LoadingBlock style={{ minHeight: '100px' }} />}
       {heroProfile && <>
-        <div style={{ flex: '1 0 65%' }}>
+        <AbilityBlock>
           <AbilityNumberInput
             title={'AGI'}
             value={heroProfile.agi}
@@ -74,15 +77,15 @@ const HeroProfile: React.FC<HeroProfileProps> = (props) => {
             max={heroProfile.total}
             onChange={(value) => handleProfileChange({ ...heroProfile, str: value })}
           />
-        </div>
-        <div style={{ flex: '1 0 30%', display: 'flex', alignItems: 'end', justifyContent: 'right' }}>
-          <div style={{ textAlign: 'left' }}>
+        </AbilityBlock>
+        <RemainPointBlock>
+          <div>
             <h4>剩餘點數: {remainPoint}</h4>
             <SaveButton disabled={remainPoint > 0} onClick={submitHeroProfile}>
               儲存
             </SaveButton>
           </div>
-        </div>
+        </RemainPointBlock>
       </>}
     </StyledHeroProfile>
   </div>);

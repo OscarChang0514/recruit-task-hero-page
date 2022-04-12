@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router";
-import { MainTitle, StyledPrimaryButton } from "./Home.style";
+import { MainTitle, StyledHome, StyledPrimaryButton } from "./Home.style";
 import { HomeProps } from "./Home.type";
 
 const Home: React.FC<HomeProps> = (props) => {
@@ -7,7 +7,7 @@ const Home: React.FC<HomeProps> = (props) => {
   const navigate = useNavigate();
 
   return (
-    <div style={{textAlign: 'center'}}>
+    <StyledHome>
       <header>
         <MainTitle>Welcome !</MainTitle>
         <h4>感謝給予面試機會 !</h4>
@@ -21,7 +21,7 @@ const Home: React.FC<HomeProps> = (props) => {
           </StyledPrimaryButton>
         </div>
       </header>
-    </div>
+    </StyledHome>
   );
 };
 

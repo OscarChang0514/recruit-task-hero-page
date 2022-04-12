@@ -11,7 +11,7 @@ export const StyledLoadingBlock = styled.div<{color?: string, dotSpacing?: strin
 	min-width: 50px;
 
 	position: absolute;
-	z-index: 50;
+	z-index: 25;
 	height: 100%;
 	background-color: rgba(255,255,255, 0.5);
 

@@ -13,6 +13,8 @@ export const StyledHeroCard = styled.a<{selected?: boolean}>`
 	background: white;
 	text-decoration: none;
 	color: inherit;
+	animation: fade-in 1.2s ease-in-out 1;
+
 	${props => props.selected && `color: ${$Green};`}
 	&:hover{
 		color: ${$LightGreen};
